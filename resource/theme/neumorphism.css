@@ -182,7 +182,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 0.98rem;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 
 .detail .phone,
@@ -193,7 +193,7 @@ body {
 }
 
 .item {
-  margin: 0 20px 21px 20px;
+  margin: 0 15px 15px 15px;
   display: grid;
   grid-template-columns: 77px 255px;
   box-shadow: var(--box-shadow-3);
@@ -226,7 +226,7 @@ body {
 .item .sub-detail {
   grid-column: 2/2;
   padding: 5px 0 0 0;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
 .social {
