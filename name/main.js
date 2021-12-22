@@ -7,7 +7,7 @@ if (username) {
     // make random theme
     let theme = 'default';
     let themeNumber = randomNumber(1, 3);
-    // themeNumber = 2;
+    // themeNumber = 3;
     switch (themeNumber) {
       case 1:
         theme = 'neumorphism_grey'
