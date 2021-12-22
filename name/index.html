@@ -4,17 +4,18 @@
 <head>
   <title>Name card online</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
   <link rel="stylesheet">
 </head>
 
 <body style="display: none;">
   <div class="container">
     <div class="card">
-      <div class="card-content">
+      <div class="card-content" id="card-content">
         <div class="front">
-          <div class="info">
+          <div class="info flip">
             <div class="logo">
-              <img id="logo" width="60">
+              <img id="logo">
             </div>
             <div class="avatar">
               <div class="avatar-img">
@@ -28,7 +29,7 @@
           <div class="detail">
             <a id="phone_href" href="tel:+84947026188" class="phone item">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172"
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172"
                   style="fill:#000000;">
                   <g transform="">
                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -54,7 +55,7 @@
             </a>
             <a id="tel_href" href="#" class="tel item">
               <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172"
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172"
                   style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -73,8 +74,9 @@
               <div class="sub-detail" id="tel">&nbsp;</div>
             </a>
             <a id="email_href" href="#" class="mail item">
-              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
-                  viewBox="0 0 172 172" style=" fill:#000000;">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172"
+                  style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                     font-family="none" font-weight="none" font-size="none" text-anchor="none"
@@ -92,7 +94,7 @@
               <div class="sub-detail" id="email">&nbsp;</div>
             </a>
             <a target="_blank" id="address_href" href="#" class="phone item">
-              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
                   viewBox="0 0 172 172" style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -114,7 +116,7 @@
           <div class="social">
             <a target="_blank" id="zalo" href="#" class="sub-social">
               <div class="icon-social">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172"
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172"
                   style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -132,7 +134,7 @@
             </a>
             <a target="_blank" id="facebook" href="#" class="sub-social">
               <div class="icon-social">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172"
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172"
                   style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -150,7 +152,7 @@
             </a>
             <a target="_blank" id="website" href="#" class="sub-social">
               <div class="icon-social">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 172 172"
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172"
                   style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -168,7 +170,7 @@
             </a>
             <a target="_blank" id="vcf" href="#" download="default.vcf" class="sub-social">
               <div class="icon-social">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 226 226"
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 226 226"
                   style=" fill:#000000;">
                   <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -186,7 +188,9 @@
             </a>
           </div>
         </div>
-        <span class="back"></span>
+        <div class="back flip">
+          <img id="ads">
+        </div>
       </div>
     </div>
 

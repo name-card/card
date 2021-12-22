@@ -2,15 +2,19 @@
 const username = window.location.search.substring(1);
 if (username) {
   console.log('Username: ', username);
-  getData(`../resource/json/${username}.json`, user => {
+  getData(`../resource/json/${username}.txt`, user => {
     // add css theme
     // make random theme
     let theme = 'default';
-    switch (randomNumber(0,1)) {
+    let themeNumber = randomNumber(1, 3);
+    // themeNumber = 2;
+    switch (themeNumber) {
       case 1:
-        theme = 'neumorphism'
+        theme = 'neumorphism_grey'
         break;
-    
+      case 2:
+        theme = 'neumorphism_blue'
+        break;
       default:
         break;
     }
@@ -25,6 +29,9 @@ if (username) {
     console.log(`Name card of ${user.name}`);
     document.title = encode(user.name).toUpperCase();
 
+    if (user.ads) {
+      document.getElementById('ads').src = `../resource/ads/${user.ads}`;
+    }
     if (user.logo) {
       document.getElementById('logo').src = `../resource/logo/${user.logo}`;
     }
@@ -81,12 +88,56 @@ function getData(url, cb) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      cb(JSON.parse(xhttp.responseText));
+      // console.log(decrypt(xhttp.responseText));
+      cb(JSON.parse(decrypt(xhttp.responseText)));
     }
   };
   xhttp.open('GET', url, true);
   xhttp.send();
 }
+
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var element = document.getElementsByClassName('flip');
+for (let i = 0; i < element.length; i++) {
+  element[i].addEventListener('click', flip => {
+    var elm = document.getElementById('card-content');
+    if (elm.style.transform == "rotateY(180deg)") {
+      elm.style.transform = "rotateY(0deg)";
+    } else {
+      elm.style.transform = "rotateY(180deg)";
+    }
+  })
+}
+
+function decrypt(str) {
+  const result = [];
+  let t;
+  str.split('').map(s => {
+    t = s.charCodeAt(0);
+    if (t >= 48 && t <= 126) {
+      result.push(String.fromCharCode(t - 1))
+    } else {
+      result.push(s)
+    }
+  })
+  return result.join('');
+}
+
+function encrypt(str) {
+  const result = [];
+  let t;
+  str.split('').map(s => {
+    t = s.charCodeAt(0);
+    if (t >= 48 && t <= 125) {
+      result.push(String.fromCharCode(t + 1))
+    } else {
+      if (t !== 10) {
+        result.push(s)
+      }
+    }
+  })
+  return result.join('');
 }

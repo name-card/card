@@ -30,9 +30,9 @@ body {
   height: 680px;
 }
 
-/* .card:hover .card-content {
-      transform: rotateY(180deg);
-    } */
+.card:hover .card-content {
+  transform: rotateY(180deg);
+}
 
 .card-content {
   width: 100%;
@@ -50,6 +50,7 @@ body {
   position: absolute;
   backface-visibility: hidden;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 .info {
@@ -149,14 +150,15 @@ body {
 }
 
 .icon-social {
-  padding: 15px 20px;
+  padding: 16px 21px;
 }
 
 .back {
+  width: 375px;
+  height: 680px;
   transform: rotateY(180deg);
   text-align: center;
   vertical-align: middle;
-  background-image: url('https://image.ibb.co/mZ8vtT/Back_jpg.png');
   background-size: cover;
 }
 
