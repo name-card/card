@@ -2,7 +2,7 @@
 const username = window.location.search.substring(1);
 if (username) {
   console.log('Username: ', username);
-  getData(`../resource/json/${username}.txt`, user => {
+  getData(`./resource/json/${username}.txt`, user => {
     // add css theme
     // make random theme
     // cjew bidv
