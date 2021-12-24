@@ -1,0 +1,28 @@
+
+:root {
+  --light-bg-dark-shadow: #bec8e4;
+  --light-bg-light-shadow: #ffffff;
+
+  --bg-color: #e4ebf5;
+  --card-shadow: 3px 3px 6px var(--light-bg-dark-shadow), -3px -3px 6px var(--light-bg-light-shadow);
+  --card-border: none;
+
+  --box-shadow: 3px 3px 6px var(--light-bg-dark-shadow), -3px -3px 6px var(--light-bg-light-shadow);
+  --box-shadow-3: 9px 9px 18px var(--light-bg-dark-shadow), -9px -9px 18px var(--light-bg-light-shadow);
+
+  --info-bg: none;
+  --info-text: black;
+  --info-logo-bg: white;
+  --info-avatar-bg: white;
+
+  --detail-bg: none;
+
+  --item-bg: #e4ebf5;
+  --item-icon: black;
+  --item-prefix: black;
+  --item-detail: black;
+
+  --social-bg: none;
+  --sub-social-bg: #e4ebf5;
+  --social-icon: black;
+}

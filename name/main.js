@@ -5,21 +5,29 @@ if (username) {
   getData(`../resource/json/${username}.txt`, user => {
     // add css theme
     // make random theme
-    let theme = 'default';
-    let themeNumber = randomNumber(1, 3);
-    // themeNumber = 3;
-    switch (themeNumber) {
-      case 1:
-        theme = 'neumorphism_grey'
-        break;
-      case 2:
-        theme = 'neumorphism_blue'
-        break;
-      default:
-        break;
+    // cjew bidv
+    // cmvf blue
+    // hsfz grey
+    if (!user.theme) {
+      let themeNumber = randomNumber(1, 4);
+      switch (themeNumber) {
+        case 1:
+          user.theme = 'bidv'
+          break;
+        case 2:
+          user.theme = 'blue'
+          break;
+        case 3:
+          user.theme = 'grey'
+          break;
+        default:
+          user.theme = 'bidv'
+          break;
+      }
     }
+
     let link = document.createElement('link');
-    link.href = `../resource/theme/${theme}.css`;
+    link.href = `../resource/theme/${user.theme}.css`;
     link.type = 'text/css';
     link.rel = 'stylesheet';
     link.media = 'screen,print';
