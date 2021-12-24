@@ -2,7 +2,7 @@
 const username = window.location.search.substring(1);
 if (username) {
   console.log('Username: ', username);
-  getData(`./resource/json/${username}.txt`, user => {
+  getData(`../../resource/json/${username}.txt`, user => {
     // add css theme
     // make random theme
     // cjew bidv
@@ -27,7 +27,7 @@ if (username) {
     }
 
     let link = document.createElement('link');
-    link.href = `../resource/theme/${user.theme}.css`;
+    link.href = `../../resource/theme/${user.theme}.css`;
     link.type = 'text/css';
     link.rel = 'stylesheet';
     link.media = 'screen,print';
@@ -38,14 +38,14 @@ if (username) {
     document.title = encode(user.name).toUpperCase();
 
     if (user.ads) {
-      document.getElementById('ads').src = `../resource/ads/${user.ads}`;
+      document.getElementById('ads').src = `../../resource/ads/${user.ads}`;
     }
     if (user.logo) {
-      document.getElementById('logo').src = `../resource/logo/${user.logo}`;
+      document.getElementById('logo').src = `../../resource/logo/${user.logo}`;
     }
 
     user.avatar = user.avatar ? user.avatar : 'default.png';
-    document.getElementById('avatar').src = `../resource/avatar/${user.avatar}`;
+    document.getElementById('avatar').src = `../../resource/avatar/${user.avatar}`;
 
     document.getElementById('name').innerHTML = user.name.toUpperCase();
     document.getElementById('role').innerHTML = user.role;
@@ -66,7 +66,7 @@ if (username) {
     document.getElementById('zalo').href = user.zalo;
     document.getElementById('facebook').href = user.facebook;
     document.getElementById('website').href = user.website;
-    document.getElementById('vcf').href = `../resource/vcf/${user.vcf}`;
+    document.getElementById('vcf').href = `../../resource/vcf/${user.vcf}`;
     document.getElementById('vcf').download = encode(user.name, true) + '.vcf';
   })
 }
