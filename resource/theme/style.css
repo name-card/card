@@ -168,10 +168,6 @@ body {
   background-color: var(--item-bg);
 }
 
-.item:first {
-  /* margin-top: 0px;; */
-}
-
 .item .icon {
   grid-row: 1/3;
   position: relative;
