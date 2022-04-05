@@ -2,7 +2,7 @@
 const username = window.location.search.substring(1);
 if (username) {
   console.log('Username: ', username);
-  getData(`resource/json/${username}.txt`, user => {
+  getData(`resource/json/${username}`, user => {
     // add css theme
     // make random theme
     // cjew bidv
@@ -34,7 +34,7 @@ if (username) {
 
     document.getElementsByTagName('head')[0].appendChild(link);
     // end theme
-    console.log(`Name card of ${user.name}`);
+    // console.log(`Name card of ${user.name}`);
     document.title = encode(user.name).toUpperCase();
 
     if (user.ads) {
@@ -45,7 +45,7 @@ if (username) {
     }
 
     user.avatar = user.avatar ? user.avatar : 'default.png';
-    document.getElementById('avatar').src = `resource/avatar/${user.avatar}`;
+    document.getElementById('avatar').src = `data:image;base64,${user.avatar}`;
 
     document.getElementById('name').innerHTML = user.name.toUpperCase();
     document.getElementById('role').innerHTML = user.role;
@@ -96,10 +96,25 @@ function getData(url, cb) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      // console.log(decrypt(xhttp.responseText));
-      cb(JSON.parse(decrypt(xhttp.responseText)));
+      const obj = JSON.parse(xhttp.responseText)
+      // decript value
+      obj.name = decrypt(obj.name)
+      obj.first = decrypt(obj.first)
+      obj.last = decrypt(obj.last)
+      obj.role = decrypt(obj.role)
+      obj.pos = decrypt(obj.pos)
+      obj.phone_href = decrypt(obj.phone_href)
+      obj.phone = decrypt(obj.phone)
+      obj.tel_href = decrypt(obj.tel_href)
+      obj.tel = decrypt(obj.tel)
+      obj.email = decrypt(obj.email)
+      obj.address = decrypt(obj.address)
+      obj.zalo = decrypt(obj.zalo)
+      obj.facebook = decrypt(obj.facebook)
+      // console.log(obj);
+      cb(obj);
     }
-  };
+  }
   xhttp.open('GET', url, true);
   xhttp.send();
 }
